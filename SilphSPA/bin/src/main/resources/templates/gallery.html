@@ -36,6 +36,17 @@
                     <li>
                         <a href="@{/PhotoGallery}">Photography</a>
                     </li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+						<ul class="dropdown-menu" aria-labelledby="about-us">
+							<li><a href="">Engage</a></li>
+							<li><a href="#">Pontificate</a></li>
+							<li><a href="#">Synergize</a></li>
+						</ul>
+					</li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
                 </ul>
                 
             </div><!-- /.navbar-collapse -->
@@ -45,10 +56,28 @@
    <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Our Photographers</h1>
+                <h1>Our Gallery</h1>
+                <p>You can pick one or more photos and add them to your order</p>
             </div>
         </div>
     </header>
+    
+    <section id="main">
+    	<div class="content">
+    		<div th:each="photograph : ${photographs}" class="showingGallery">
+	    		<a th:href="@{'/getPhoto/' + @{photograph.id}}">
+	    		<img alt="" th:src="@{'/getPhoto/' + ${photograph.id}}" th:title="${photograph.photoName}">
+	    		</a>
+	    		<table>
+	    		<tr>
+	    			<td><h3 th:text="${photograph.price} + 'euros'"</h3></td>
+	    			<td><button name="buy">Buy</button></td>
+	    			</tr>
+	    		</table>
+	    		
+    		</div>
+    	</div>
+    </section>
 
 
 
