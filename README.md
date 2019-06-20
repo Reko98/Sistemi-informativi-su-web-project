@@ -1,1 +1,2 @@
-# Sistemi-informativi-su-web-project
+#Exam project of Sistemi operativi su Web.
+    -Author: G. Fernando Lojano Mayaguari
